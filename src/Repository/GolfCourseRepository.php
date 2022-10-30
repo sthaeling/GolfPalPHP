@@ -39,6 +39,26 @@ class GolfCourseRepository extends ServiceEntityRepository
         }
     }
 
+    public function getAllEntries(string $clubId = null)
+    {
+        $queryBuilder = $this->createQueryBuilder('g')
+            ->orderBy('g.id', 'ASC')
+        ;
+
+        if ($clubId) {
+            $queryBuilder->where(sprintf('g.golfClub=%s', $clubId));
+        }
+
+        return $queryBuilder
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function getCourseHoles(string $courseId)
+    {
+
+    }
+
 //    /**
 //     * @return GolfCourse[] Returns an array of GolfCourse objects
 //     */

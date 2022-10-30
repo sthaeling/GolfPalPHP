@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GolfCourseController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <main class="container">
+        <h1 class="text-black text-uppercase text-center my-4">Golf courses</h1>
+        <p class="text-black text-center my-4">Select a golf course create a new one to proceed</p>
+        <div class="row">
+            <div class="col-md-10 col-sm-10 mx-auto p-0">
+                <div class="p-3">
+                    <ul class="list-group list-group-flush border-top-0">
+                        {% for golfCourse in golfCourses %}
+                            <li class="d-flex justify-content-between flex-column align-items-center card mb-3 px-4">
+                                <div class="item-header col-12 d-flex flex-row justify-content-between mt-3 mr-3 ml-3">
+                                    <div class="golfclub-title-container d-flex justify-content-between flex-row col-11">
+                                        <h2
+                                                class='golfclub-title mr-2 mt-3 mb-3'
+                                                title={{ golfCourse.name }}
+                                        >
+                                            {{ golfCourse.name }}
+                                        </h2>
+                                        <h3 class="golfclub-title mr-2 mt-3 mb-3">{{ golfCourse.holesAmount }} holes</h3>
+                                    </div>
+                                </div>
+                                <div class="item-body col-12 d-flex">
+                                    <div class="d-flex justify-content-start flex-row col-6 align-items-center">
+                                        <div class="item-body-court col-6 m-0 p-0">
+                                            {% if golfCourse.totalPar is not null %}
+                                                <p class="item-body-court-entry par">Total par: {{ golfCourse.totalPar }}</p>
+                                            {% endif %}
+                                            {% if golfCourse.totalDistance is not null %}
+                                                <p class="item-body-court-entry distance">Total distance: {{ golfCourse.totalDistance }} m</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="item-body-user col-6 text-right mt-3">
+                                        </div>
+                                    </div>
+                                    <div class="item-body-select col-6 mb-3 pr-0 d-flex flex-column justify-content-end">
+                                        <div class="d-flex flex-row justify-content-end">
+                                            <a class="btn btn-primary float-right float-bottom mx-2">
+                                                Add new game
+                                            </a>
+                                            <a class="btn btn-secondary float-right float-bottom">
+                                                View course holes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
+                        <a class="btn btn-primary w-25" href="/creategolfcourse">
+                            Add new course
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

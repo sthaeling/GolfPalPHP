@@ -3,9 +3,9 @@
 {% block title %}Hello GolfClubController!{% endblock %}
 
 {% block body %}
+    {{ parent() }}
+
     <main class="container">
-        <a class="btn btn-secondary mt-3 mr-2" href="/">Home</a>
-        <button class="btn btn-secondary mt-3">User</button>
         <h1 class="text-black text-uppercase text-center my-4">Golf clubs</h1>
         <p class="text-black text-center my-4">Select a golf club or create a new one to proceed</p>
         <div class="row">
