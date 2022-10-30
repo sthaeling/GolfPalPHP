@@ -39,6 +39,15 @@ class GolfClubRepository extends ServiceEntityRepository
         }
     }
 
+    public function getAllEntries()
+    {
+        return $this->createQueryBuilder('g')
+            ->orderBy('g.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return GolfClub[] Returns an array of GolfClub objects
 //     */
