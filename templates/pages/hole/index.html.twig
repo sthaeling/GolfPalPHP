@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-md-10 col-sm-10 mx-auto p-0">
                 <div class="p-3">
-                    <ul class="list-group list-group-flush border-top-0">
+                    <ul class="border-top-0 col-12 row">
                         {% for hole in holes %}
-                            <li class="d-flex justify-content-between flex-column align-items-center card mb-3 px-4">
+                            <li class="d-flex justify-content-between flex-column align-items-center card mb-3 px-4 col-12 col-xl-6">
                                 <div class="item-header col-12 d-flex flex-row justify-content-between mt-3 mr-3 ml-3">
                                     <div class="golfclub-title-container d-flex justify-content-between flex-row col-11">
                                         <h2 class='golfclub-title mr-2 mt-3 mb-3' title={{ hole.holeNumber }}>
@@ -23,8 +23,8 @@
                                     </div>
                                 </div>
                                 <div class="item-body col-12 d-flex">
-                                    <div class="d-flex justify-content-start flex-row col-6 align-items-center">
-                                        <div class="item-body-court col-6 m-0 p-0">
+                                    <div class="d-flex justify-content-start flex-row col-6 col- align-items-center">
+                                        <div class="item-body-court col-12 m-0 p-0">
                                             <h4 class="item-body-court-entry distance">Distance: {{ hole.distance }} m</h4>
                                             <h4 class="item-body-court-entry handicap">HCP: {{ hole.hcp }}</h4>
                                         </div>
@@ -43,7 +43,7 @@
                         {% endfor %}
                     </ul>
 
-                    {% if holes|length < holes.0.courseHolesAmount %}
+                    {% if holes|length > 0 and holes|length < holes.0.courseHolesAmount %}
                         <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
                             <a class="btn btn-primary w-25" href="#">
                                 Add new hole

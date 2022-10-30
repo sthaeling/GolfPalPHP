@@ -13,10 +13,7 @@ class CreateGolfClubController extends AbstractController
     #[Route('/creategolfclub', name: 'app_create_golfclub')]
     public function index(): Response
     {
-
-
-        return $this->render('create_golfClub/index.html.twig', [
-            'golfClubs' => $clubs,
+        return $this->render('pages/create_golfClub/index.html.twig', [
         ]);
     }
 }

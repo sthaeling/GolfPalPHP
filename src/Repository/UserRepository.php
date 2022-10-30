@@ -39,6 +39,17 @@ class UserRepository extends ServiceEntityRepository
         }
     }
 
+    public function getUsers()
+    {
+        $queryBuilder = $this->createQueryBuilder('g')
+            ->orderBy('g.id', 'ASC')
+        ;
+
+        return $queryBuilder
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */

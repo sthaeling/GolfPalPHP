@@ -26,7 +26,7 @@ class HoleController extends AbstractController
         $golfCourseId = $request->query->get('courseId');
         $holes = $this->displayHoleService->mapGolfCoursesForListing($golfCourseId);
 
-        return $this->render('hole/index.html.twig', [
+        return $this->render('pages/hole/index.html.twig', [
             'holes' => $holes,
         ]);
     }
