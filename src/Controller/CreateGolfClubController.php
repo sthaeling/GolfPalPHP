@@ -48,7 +48,8 @@ class CreateGolfClubController extends AbstractController
             $response = $this->createGolfClub->createNewGolfClub($golfClub);
 
             $response = json_decode($response->getContent(), true);
-            return $this->redirectToRoute('app_golf_course', ['golfcourseid' => $response['id']]);
+
+            return $this->redirectToRoute('app_golf_course', ['clubId' => $response['id']]);
         }
 
         return $this->renderForm('pages/create_golfClub/index.html.twig', ['form' => $form]);

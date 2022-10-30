@@ -5,5 +5,5 @@
 {% block body %}
     {{ parent() }}
 
-    {{ form(form) }}
+    {% include 'component/form.html.twig' with { form: form, formName: 'club data' } %}
 {% endblock %}
