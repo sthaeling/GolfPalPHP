@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@symfony/webpack-encore": "^4.1.1",
+    "bootstrap": "^5.2.2",
+    "jquery": "^3.6.1",
+    "sass-loader": "^13.1.0",
+    "webpack-notifier": "^1.15.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}
