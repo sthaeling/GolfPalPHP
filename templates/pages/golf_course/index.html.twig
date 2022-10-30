@@ -57,10 +57,10 @@
                         {% endfor %}
                     </ul>
 
-                    {% if golfCourses.0.golfClub.id %}
+                    {% if golfClubId %}
                         <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
                             <a class="btn btn-primary w-25"
-                               href="/creategolfcourse?clubId={{ golfCourses.0.golfClub.id }}">
+                               href="/creategolfcourse?clubId={{ golfClubId }}">
                                 Add new course
                             </a>
                         </div>

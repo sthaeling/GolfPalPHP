@@ -26,7 +26,7 @@ class CreateGolfCourse
 
         $golfCourseRepo = $entityManager->getRepository(GolfCourse::class);
 
-        $existingResult = $golfCourseRepo->findOneBy(['name' => $courseData->getName()]);
+        $existingResult = $golfCourseRepo->findOneBy(['name' => $courseData->getName(), 'golfClub' => $courseData->getGolfClub()]);
 
         if ($existingResult) {
             return new JsonResponse(['id' => $existingResult->getId()], 200);

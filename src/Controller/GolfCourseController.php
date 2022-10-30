@@ -28,6 +28,7 @@ class GolfCourseController extends AbstractController
 
         return $this->render('pages/golf_course/index.html.twig', [
             'golfCourses' => $golfCourses,
+            'golfClubId' => $golfClubId,
         ]);
     }
 }
