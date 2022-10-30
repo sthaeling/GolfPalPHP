@@ -39,6 +39,21 @@ class HoleRepository extends ServiceEntityRepository
         }
     }
 
+    public function getHoles(string $courseId = null)
+    {
+        $queryBuilder = $this->createQueryBuilder('g')
+            ->orderBy('g.id', 'ASC')
+        ;
+
+        if ($courseId) {
+            $queryBuilder->where(sprintf('g.golfCourse=%s', $courseId));
+        }
+
+        return $queryBuilder
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Hole[] Returns an array of Hole objects
 //     */
