@@ -7,7 +7,6 @@ namespace App\Service\GolfClub;
 use App\Entity\GolfClub;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Flex\Response;
 
 class CreateGolfClub
 {

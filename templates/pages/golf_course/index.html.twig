@@ -22,17 +22,20 @@
                                         >
                                             {{ golfCourse.name }}
                                         </h2>
-                                        <h3 class="golfclub-title mr-2 mt-3 mb-3">{{ golfCourse.holesAmount }} holes</h3>
+                                        <h3 class="golfclub-title mr-2 mt-3 mb-3">{{ golfCourse.holesAmount }}
+                                            holes</h3>
                                     </div>
                                 </div>
                                 <div class="item-body col-12 d-flex">
                                     <div class="d-flex justify-content-start flex-row col-6 align-items-center">
                                         <div class="item-body-court col-6 m-0 p-0">
                                             {% if golfCourse.totalPar is not null %}
-                                                <p class="item-body-court-entry par">Total par: {{ golfCourse.totalPar }}</p>
+                                                <p class="item-body-court-entry par">Total
+                                                    par: {{ golfCourse.totalPar }}</p>
                                             {% endif %}
                                             {% if golfCourse.totalDistance is not null %}
-                                                <p class="item-body-court-entry distance">Total distance: {{ golfCourse.totalDistance }} m</p>
+                                                <p class="item-body-court-entry distance">Total
+                                                    distance: {{ golfCourse.totalDistance }} m</p>
                                             {% endif %}
                                         </div>
                                         <div class="item-body-user col-6 text-right mt-3">
@@ -43,7 +46,8 @@
                                             <a class="btn btn-primary float-right float-bottom mx-2" href="#">
                                                 Add new game
                                             </a>
-                                            <a class="btn btn-secondary float-right float-bottom" href="/hole?courseId={{ golfCourse.id }}">
+                                            <a class="btn btn-secondary float-right float-bottom"
+                                               href="/hole?courseId={{ golfCourse.id }}">
                                                 View course holes
                                             </a>
                                         </div>
@@ -52,11 +56,15 @@
                             </li>
                         {% endfor %}
                     </ul>
-                    <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
-                        <a class="btn btn-primary w-25" href="/creategolfcourse">
-                            Add new course
-                        </a>
-                    </div>
+
+                    {% if golfCourses.0.golfClub.id %}
+                        <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
+                            <a class="btn btn-primary w-25"
+                               href="/creategolfcourse?clubId={{ golfCourses.0.golfClub.id }}">
+                                Add new course
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
