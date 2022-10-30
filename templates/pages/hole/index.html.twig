@@ -43,7 +43,7 @@
                         {% endfor %}
                     </ul>
 
-                    {% if holes|length > 0 and holes|length < holes.0.courseHolesAmount %}
+                    {% if holes|length is same as 0 or holes|length > 0 and holes|length < holes.0.courseHolesAmount %}
                         <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
                             <a class="btn btn-primary w-25" href="#">
                                 Add new hole
