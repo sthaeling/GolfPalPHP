@@ -11,7 +11,7 @@ class CreateGolfCourseController extends AbstractController
     #[Route('/creategolfcourse', name: 'app_create_golf_course')]
     public function index(): Response
     {
-        return $this->render('create_golf_course/index.html.twig', [
+        return $this->render('pages/create_golf_course/index.html.twig', [
             'controller_name' => 'CreateGolfCourseController',
         ]);
     }

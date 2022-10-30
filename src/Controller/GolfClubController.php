@@ -24,7 +24,7 @@ class GolfClubController extends AbstractController
     {
         $clubs = $this->displayGolfClubs->mapGolfClubsForListing();
 
-        return $this->render('golfClub/index.html.twig', [
+        return $this->render('pages/golfClub/index.html.twig', [
             'clubs' => $clubs
         ]);
     }

@@ -26,7 +26,7 @@ class GolfCourseController extends AbstractController
         $golfClubId = $request->query->get('clubId');
         $golfCourses = $this->displayGolfCourses->mapGolfCoursesForListing($golfClubId);
 
-        return $this->render('golf_course/index.html.twig', [
+        return $this->render('pages/golf_course/index.html.twig', [
             'golfCourses' => $golfCourses,
         ]);
     }
