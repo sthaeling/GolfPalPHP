@@ -37,7 +37,7 @@ class CreateGolfCourseController extends AbstractController
         $form = $this->createFormBuilder($golfCourse)
             ->add('name', TextType::class)
             ->add('holesAmount', IntegerType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create Club'])
+            ->add('save', SubmitType::class, ['label' => 'Create Course'])
             ->getForm();
 
         $form->handleRequest($request);
@@ -45,6 +45,7 @@ class CreateGolfCourseController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $golfCourse = $form->getData();
             $golfClub = $this->golfClubRepository->find($request->query->get('clubId'));
+            assert($golfCourse instanceof GolfCourse);
             $golfCourse->setGolfClub($golfClub);
 
             $response = $this->createGolfCourse->createNewGolfCourse($golfCourse);
@@ -54,6 +55,6 @@ class CreateGolfCourseController extends AbstractController
             return $this->redirectToRoute('app_hole', ['courseId' => $response['id']]);
         }
 
-        return $this->renderForm('pages/create_golfClub/index.html.twig', ['form' => $form]);
+        return $this->renderForm('pages/create_golf_course/index.html.twig', ['form' => $form]);
     }
 }

@@ -28,6 +28,7 @@ class HoleController extends AbstractController
 
         return $this->render('pages/hole/index.html.twig', [
             'holes' => $holes,
+            'courseId' => $golfCourseId,
         ]);
     }
 }

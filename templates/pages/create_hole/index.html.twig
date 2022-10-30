@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CreateHoleController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% include 'component/form.html.twig' with { form: form, formName: 'hole data' } %}
+{% endblock %}
