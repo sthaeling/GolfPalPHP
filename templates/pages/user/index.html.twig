@@ -36,7 +36,10 @@
                                     </div>
                                     <div class="item-body-select col-6 mb-3 pr-0 d-flex flex-column justify-content-end">
                                         <div class="d-flex flex-row justify-content-end">
-                                            <a class="btn btn-primary float-right float-bottom" href="#">View</a>
+                                            <a class="btn btn-secondary float-right float-bottom" href="#">View</a>
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-end mt-2">
+                                            <a class="btn btn-primary float-right float-bottom" href="/userselect?userId={{ user.id }}">Select</a>
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +47,7 @@
                         {% endfor %}
                     </ul>
                     <div class="mb-3 mt-3 d-flex flex-row justify-content-center">
-                        <a class="btn btn-primary w-25" href="#">
+                        <a class="btn btn-primary w-25" href="/createuser">
                             Add new user
                         </a>
                     </div>
