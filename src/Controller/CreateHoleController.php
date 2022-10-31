@@ -2,16 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\GolfClub;
-use App\Entity\GolfCourse;
 use App\Entity\Hole;
 use App\Repository\GolfCourseRepository;
-use App\Repository\HoleRepository;
 use App\Service\Hole\CreateHole;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

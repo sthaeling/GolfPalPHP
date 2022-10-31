@@ -23,4 +23,9 @@ class DisplayUserService
         $users = $this->userRepository->getUsers();
         return $users;
     }
+
+    public function getUserById(string $userId)
+    {
+        return $this->userRepository->find($userId);
+    }
 }
