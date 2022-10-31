@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GameDetailController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% block game_detail %}
+        <main class="container">
+            <h1 class="text-black text-uppercase text-center mt-4 mb-2">Scores of game {{ game.number + 1 }} on {{ game.date.format('m-d-Y') }}</h1>
+            {% if user is defined %}
+                <p class="text-center my-0">Played by {{ user.firstName }} {{ user.lastName }}</p>
+            {% endif %}
+            {% if totalPar is defined and totalScore is defined %}
+                <h5 class="text-black text-center my-1">Total par of played holes: {{ totalPar }}</h5>
+                <h5 class="text-black text-center my-1">Total score of played holes: {{ totalScore }}</h5>
+                <h5 class="text-black text-center my-1">Result: {% if totalScore - totalPar > 0%}+{% endif%}{{ totalScore - totalPar }}</h5>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-10 col-sm-10 mx-auto p-0">
+                    <div class="p-3">
+                        <ul class="border-top-0 col-12 row">
+                            {% for hole in score %}
+                                <li class="d-flex justify-content-between flex-column align-items-center card mb-3 px-4 col-12 col-xl-6 pb-2">
+                                    <div class="item-header col-12 d-flex flex-row justify-content-between mt-3 mr-3 ml-3">
+                                        <div class="golfclub-title-container d-flex justify-content-between flex-row col-11">
+                                            <h4 class='golfclub-title mr-2 mt-3 mb-3' title={{ hole.hole.holeNumber }}>
+                                                Hole {{ hole.hole.holeNumber }}
+                                            </h4>
+                                            <h4 class="golfclub-title mr-2 mt-3 mb-3">Score: {{ hole.score }}</h4>
+                                        </div>
+                                    </div>
+                                    <div class="item-body col-12 d-flex">
+                                        <div class="d-flex justify-content-start flex-row col-6 col- align-items-center">
+                                            <div class="item-body-court col-12 m-0 p-0">
+                                                <h6 class="item-body-court-entry par">Par {{ hole.hole.par }}</h6>
+                                                <h6 class="item-body-court-entry distance">Distance: {{ hole.hole.distance }} m</h6>
+                                                <h6 class="item-body-court-entry handicap">HCP: {{ hole.hole.hcp }}</h6>
+                                                <h6 class="item-body-court-entry results">Result: {{ hole.score - hole.hole.par }}</h6>
+                                            </div>
+                                            <div class="item-body-user col-6 text-right mt-3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    {% endblock %}
+{% endblock %}

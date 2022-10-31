@@ -25,6 +25,12 @@ class Game
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $time = null;
 
+    #[ORM\Column]
+    private ?int $number = null;
+
+    #[ORM\Column]
+    private ?bool $finishedEntry = null;
+
     public function __construct()
     {
         $this->UserHoleScore = new ArrayCollection();
@@ -85,6 +91,30 @@ class Game
     public function setTime(?\DateTimeInterface $time): self
     {
         $this->time = $time;
+
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(int $number): self
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    public function isFinishedEntry(): ?bool
+    {
+        return $this->finishedEntry;
+    }
+
+    public function setFinishedEntry(bool $finishedEntry): self
+    {
+        $this->finishedEntry = $finishedEntry;
 
         return $this;
     }

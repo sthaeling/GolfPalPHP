@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CreateGameController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    {{ form_start(form) }}
+
+    <div class="container">
+        <h2 class="text-center mt-4">Enter hole {{ currentHole }} score</h2>
+        <div class="my-custom-class-for-errors col-12">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="col-12 mt-8">
+            {% for child in form.children %}
+                <div class="row col-12">
+                    {{ form_row(child) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}
