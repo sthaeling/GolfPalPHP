@@ -43,9 +43,11 @@
                                     </div>
                                     <div class="item-body-select col-6 mb-3 pr-0 d-flex flex-column justify-content-end">
                                         <div class="d-flex flex-row justify-content-end">
-                                            <a class="btn btn-primary float-right float-bottom mx-2" href="#">
-                                                Add new game
-                                            </a>
+                                            {% if loggedInUser is defined and loggedInUser is not null or app.request.cookies.get('userId') is defined and app.request.cookies.get('userId') is not null %}
+                                                <a class="btn btn-primary float-right float-bottom mx-2" href="/creategame?courseId={{ golfCourse.id }}">
+                                                    Add new game
+                                                </a>
+                                            {% endif %}
                                             <a class="btn btn-secondary float-right float-bottom"
                                                href="/hole?courseId={{ golfCourse.id }}">
                                                 View course holes
