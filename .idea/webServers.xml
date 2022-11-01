@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="54575b34-a333-4456-a5bb-ce3689fc2478" name="Server">
+        <fileTransfer rootFolder="/user/GolfPal" accessType="SFTP" host="kellario.de" port="22" sshConfigId="c2c40b34-ad55-497d-86cb-ef4fb8246286" sshConfig="root@kellario.de:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

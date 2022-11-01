@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="192.168.33.131" id="40f435b8-58e7-4837-a1bf-598a7275e4c2" port="22" customName="2G local" nameFormat="CUSTOM" username="vagrant" useOpenSSHConfig="true">
+        <option name="customName" value="2G local" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="kellario.de" id="c2c40b34-ad55-497d-86cb-ef4fb8246286" port="22" nameFormat="DESCRIPTIVE" username="root" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

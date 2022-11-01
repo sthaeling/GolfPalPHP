@@ -13,7 +13,7 @@
                     <div class="p-3">
                         <ul class="border-top-0 col-12 row">
                             {% for game in games %}
-                                <li class="d-flex justify-content-between flex-column align-items-center card mb-3 px-4 col-12 col-xl-6 pb-2">
+                                <li class="d-flex justify-content-between flex-column align-items-center card mb-3 px-4 col-12 pb-2">
                                     <div class="d-flex justify-content-between col-12 mx-auto mb-0 mt-2">
                                         <p class="my-0">{{ game.date.format('m-d-Y') }}</p>
                                         <p class="my-0">Played by {{ game.user.firstName }} {{ game.user.lastName }}</p>
