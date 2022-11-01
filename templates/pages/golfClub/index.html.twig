@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                                 <div class="item-body col-12 d-flex">
-                                    <div class="d-flex justify-content-start flex-row col-6 align-items-end card mb-3 px-3">
+                                    <div class="d-flex justify-content-start flex-row col-9 align-items-end card mb-3 px-3">
                                         <div class="item-body-address col-6 m-0 p-0">
                                             <p class="street-nr mt-3">{{ club.street }}</p>
                                             <p class="zip-city">{{ club.zipCode }} {{ club.city }}</p>
@@ -39,10 +39,9 @@
                                             <p><a href='mailto:{{ club.email }}'>Write mail</a></p>
                                         </div>
                                     </div>
-                                    <div class="item-body-select col-6 mb-3 pr-0 d-flex flex-column justify-content-end">
+                                    <div class="item-body-select col-3 mb-3 pr-0 d-flex flex-column justify-content-end">
                                         <div class="d-flex flex-row justify-content-end">
                                             <a class="btn btn-primary float-right float-bottom" href="/golfcourse?clubId={{ club.id }}">
-                                            {# Todo use controller paths for urls #}
                                                 Select
                                             </a>
                                         </div>
